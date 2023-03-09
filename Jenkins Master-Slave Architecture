@@ -46,5 +46,6 @@ Now Excute below command
 
 java -jar agent.jar -jnlpUrl http://18.183.16.218:8080/manage/computer/Slave%201/jenkins-agent.jnlp -workDir "/opt/buildserver "
 
+please check befor excuting jenkins ulr which is correct or not 
 
 Finally slave will connected to Master 
