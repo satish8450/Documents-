@@ -1,0 +1,50 @@
+Jenkins Master and Slave concept 
+
+I Have configure One Master node with Java 11 - Jenkins Up and running 
+Launched another Instance and installed Java 11 
+
+In Master we need to configure Slave system 
+Manage Jenkins --> Manage Nodes and Clouds --> New Node
+Add the node name as Permanent Agent 
+Provide below information to add Jenkins agent
+Name: As your wish 
+Description: As ur wish 
+Number of executors: 2
+Remote root directory: /opt/Build --> Workspace will create in Slave 
+Labels: Name of the job 
+
+Usage:
+   Use this node as much as possible -- default 
+   Only build jobs with label expressions matching this node -- if the lables name matched that job only excute 
+Launch Method 
+ Launch agent by connecting it to the master --- Commands will run on slave to connect with master 
+ Launch agent via execution of command on the controller -- Commands will run on Master to connect with slave 
+ 
+ Custom WorkDir path: Logs will stored here (remote root directory--/opt/Build)
+ 
+ Use WebSocket [x] click on this 
+ 
+ Availability:
+Keep this agent online as much as possible ---This one 
+Bring this agent online according to a schedule
+Bring this agent online when in demand, and take offline when idle
+
+Slave Node Created Successfully . We need to communicate our salve to master by using agent.jar 
+
+This is the error will get 
+
+Run from agent command line:
+"
+curl -sO http://18.183.16.218:8080/jnlpJars/agent.jar
+java -jar agent.jar -jnlpUrl http://18.183.16.218:8080/manage/computer/Slave%201/jenkins-agent.jnlp -workDir "/opt/buildserver "
+
+Click on agent.jar it will download in our local 
+
+Copy this jar file from local to slave mechince under /opt
+
+Now Excute below command 
+
+java -jar agent.jar -jnlpUrl http://18.183.16.218:8080/manage/computer/Slave%201/jenkins-agent.jnlp -workDir "/opt/buildserver "
+
+
+Finally slave will connected to Master 
