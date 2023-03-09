@@ -49,3 +49,11 @@ java -jar agent.jar -jnlpUrl http://18.183.16.218:8080/manage/computer/Slave%201
 please check befor excuting jenkins ulr which is correct or not 
 
 Finally slave will connected to Master 
+
+-------------------------------------------------------------------------------------------
+
+Create one job just excute any shell command by default this job will run in Master but we need to excute in slave 
+
+In job configuration Genaral --- Restrict to where is this job can run 
+in lablel section we need to give slave label where label is matched this job will excute in the particular slave 
+
