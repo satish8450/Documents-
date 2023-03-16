@@ -27,5 +27,12 @@ Step 1:
     Privatesubet instance dont have routetable but can connet through publich instance by using pemkey and ssh connecion.
     
     
- 
- 
+ #NATgateWay
+  
+  This service enable connection from Private instaance to locat through INTERGATWAY 
+  
+  Create NGW in PublicSubnet and allocate ElasticIP
+  In PrivateSubnet edit rule in routetable as 0.0.0.0/0 traget as NGW 
+  
+  This connection will establish from privateinstance to local host it is one way connection.
+  
