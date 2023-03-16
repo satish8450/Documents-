@@ -22,6 +22,10 @@ Step 1:
  
  Step 3 : EC2 Creation 
     
-    launch 
+    launch two Instances under VPC Public and Private subnets
+    We can able to access the Public subnet instace beacuse this subnet assocaited with routetable, we define route table rule as 0.0.0.0/0 target as IGW 
+    Privatesubet instance dont have routetable but can connet through publich instance by using pemkey and ssh connecion.
+    
+    
  
  
