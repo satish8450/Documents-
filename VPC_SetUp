@@ -1,0 +1,27 @@
+These are the following procedure to setup VPC 
+ Vpc is customised network to isolate the appliction
+
+Step 1:
+ First we need to create VPC with one public and private subnet 
+   Ex : VPC cidr block is 10.0.0.0/16 total 65,536 Ips will allocate
+       subnet1 PUBLIC 10.0.0.0/24 total 256 ips will allocate 
+       subnet2 PRIVATE 10.0.1.0/24 total 256 ips will allocate 
+ Remaining Ips Will be future purpose 
+ 
+ Step 2:
+ Create NATGAtWay for Vpc that will help to access the public subent thorough internet 
+ 
+ Create INTERNETGATEWAY and attach to present VPC
+ For Internet accesss  we neef to create one routetable 
+ 
+ By Default Public and Private subnets attched to same route table but here we need to provide internet access to only Public 
+ Creat another routable attach to Public subnet and edit rule in routable as 0.0.0.0/0 Tagert as INTERNETGATEWAY 
+ 
+    So Here PUBILC SUBNET attach to Created  ROUTETABLE with internet acces through INTERNETGATEWAY 
+            PRIVATE SUBNET attach to default ROUTETABLE
+ 
+ Step 3 : EC2 Creation 
+    
+    launch 
+ 
+ 
